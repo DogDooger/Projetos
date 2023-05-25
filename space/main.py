@@ -33,11 +33,14 @@ while loop:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             loop = False
-
+        ##if event.type == pygame.MOUSEMOTION:
+            ##print(event.pos)
+            ##navRec.center = event.pos
        
     #Limitando os frames  (FPS)
-    relogio.tick(30)
-
+    relogio.tick(120)
+    ##print(pygame.mouse.get_pressed())
+    navRec.center = pygame.mouse.get_pos()
     # Atualizando os Quadros
 
     display.fill('black')
@@ -45,8 +48,8 @@ while loop:
 
     #utilizando o retangulo para poscionar a nave
     display.blit(nave, navRec)
-    if navRec.y >=10:
-        navRec.y-=0.05 # type: ignore
+    #if navRec.y >=10:
+        #navRec.y-=1 #type: ignore
 
     #display.blit(texto, (10,10))
     display.blit(texto, recText)
