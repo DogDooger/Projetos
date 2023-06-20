@@ -62,7 +62,7 @@ navRec = nave.get_rect(center=(500,500))
 bg1 = pygame.image.load(os.path.join("assets","img","espaco.png")).convert()
 bgR1 = bg1.get_rect(center=((width/2,(height/2))))
 #Criando a Font do jogo
-font = pygame.font.Font(os.path.join("assets","Font","Sigmar","Sigmar-Regular.ttf"),16)
+font = pygame.font.Font(os.path.join("assets","Font","Sigmar-Regular.ttf"),16)
 
 pode_disparar = True #verifica se o jogador pode realizar outro dispato
 tempo_disparo=pygame.time.get_ticks()
@@ -73,10 +73,10 @@ meteoro_tempo = pygame.event.custom_type()
 pygame.time.set_timer(meteoro_tempo, 500) # 0,5 segundos 
 
 #Criando som
-laser_som = pygame.mixer.Sound(os.path.join("assets","sound","laser.ogg"))
-explosao_som = pygame.mixer.Sound(os.path.join("assets","sound","explosao.wav"))
-musica = pygame.mixer.Sound(os.path.join("assets","sound","ledzepelin.mp3"))
-musica.play(loops=-1)
+#laser_som = pygame.mixer.Sound(os.path.join("assets","sound","laser.ogg"))
+#explosao_som = pygame.mixer.Sound(os.path.join("assets","sound","explosao.wav"))
+#musica = pygame.mixer.Sound(os.path.join("assets","sound","ledzepelin.mp3"))
+#musica.play(loops=-1)
 loop = True
 relogio = pygame.time.Clock()
 while loop:
@@ -93,7 +93,7 @@ while loop:
             pode_disparar = False
             tempo_disparo = pygame.time.get_ticks()
             #Executa som do laser
-            laser_som.play()
+            #laser_som.play()
            
         if event.type == meteoro_tempo:
             x_pos = randint(-110, width+110)
@@ -138,7 +138,7 @@ while loop:
             if laser_ret.colliderect(meteoro_tupla[0]):
                 metoros_list.remove(meteoro_tupla)
                 laser_list.remove(laser_ret)
-                explosao_som.play()
+                #explosao_som.play()
 
 
     for rec in laser_list:
